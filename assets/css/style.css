@@ -39,6 +39,18 @@ table {
 }
 
 @font-face {
-  font-family: Mona Sans;
+  font-family: Inter;
   src: url(..//font/Inter-Regular.ttf);
+}
+.time {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.3613rem;
+  letter-spacing: -7%;
+}
+
+.time-block {
+  display: flex;
+  flex-direction: row;
 }/*# sourceMappingURL=style.css.map */
