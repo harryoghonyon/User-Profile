@@ -8,10 +8,40 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <div class="time-block">
-      <p class="hr-live-time time"></p>
-      <p class="time">:</p>
-      <p class="mins-live-time time"></p>
+    <header>
+      <div class="date-mode-wrap">
+        <div class="date-time">
+          <div class="current-day">
+            <p class="time today-date"></p>
+          </div>
+          <div class="time-block">
+            <p class="hr-live-time time"></p>
+            <p class="time">:</p>
+            <p class="mins-live-time time"></p>
+            <p class="time">:</p>
+            <p class="secs-live-time time"></p>
+          </div>
+        </div>
+
+        <!-- <div class="mode-wrap">
+        <img class="day-icon" src="./assets/img/sun.svg" alt="" />
+        <img class="night-icon" src="./assets/img/moon.svg" alt="" />
+      </div> -->
+      </div>
+    </header>
+
+    <div class="main-pad">
+      <div class="new-profile-wrap">
+        <button class="new-profile">New Profile</button>
+      </div>
+
+      <div class="empty-profile-wrap">
+        <img
+          class="empty-profile-icon"
+          src="./assets/img/empty profile icon.svg"
+          alt=""
+        />
+      </div>
     </div>
   </body>
   <script src="./assets/js/script.js"></script>

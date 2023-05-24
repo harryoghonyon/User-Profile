@@ -37,15 +37,75 @@ table {
     src: url(..//font/Inter-Regular.ttf);
 }
 
+$time-font-family: Inter;
+$time-font-weight: 400;
+$time-font-size: 1rem;
+$time-line-height: 1.3613rem;
+$time-letter-spacing: -7%;
+
+$dark-bg: #000;
+$bg-color: #fff;
+$font-color: #000;
+$btn-font-color: #fff;
+body {
+  background-color: $bg-color;
+}
+
 .time {
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 1.125rem;
-    line-height: 1.3613rem;
-    letter-spacing: -7%;
+  font-family: $time-font-family;
+  font-weight: $time-font-weight;
+  font-size: $time-font-size;
+  line-height: $time-line-height;
+  letter-spacing: $time-letter-spacing;
+  color: $font-color;
 }
 
 .time-block {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+}
+
+.date-time {
+  display: flex;
+  flex-direction: row;
+  gap: 0.375rem;
+}
+
+.date-mode-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  align-items: center;
+}
+
+.main-pad {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.new-profile {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 0.625rem;
+	padding-bottom: 0.625rem;
+	background-color: $dark-bg;
+	border-radius: 10rem;
+	color: $btn-font-color;
+	font-family: $time-font-family;
+    font-weight: $time-font-weight;
+    font-size: 15px;
+    line-height: $time-line-height;
+    letter-spacing: $time-letter-spacing;
+}
+
+.new-profile-wrap {
+	padding-top: 1.5rem;
+}
+
+.empty-profile-wrap {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
