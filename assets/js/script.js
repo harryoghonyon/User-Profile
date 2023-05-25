@@ -42,3 +42,25 @@ const updateSecs = () => {
 updateSecs();
 
 setInterval(updateSecs, 1000);
+
+let newProfileBtn = document.querySelector(".new-profile");
+let overlay = document.querySelector(".overlay");
+
+newProfileBtn.addEventListener("click", () => {
+  overlay.style.display = "block";
+});
+
+// Select the day and night icons
+let dayIcon = document.querySelector(".day-icon");
+let nightIcon = document.querySelector(".night-icon");
+let thecurrentHour = new Date().getHours();
+
+// Display the appropriate icon based on the current hour
+
+if (currentHour >= 5 && currentHour <= 20) {
+  dayIcon.style.display = "block";
+  nightIcon.style.display = "none";
+} else {
+  dayIcon.style.display = "none";
+  nightIcon.style.display = "block";
+}
