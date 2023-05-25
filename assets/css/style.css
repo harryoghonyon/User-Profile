@@ -46,7 +46,7 @@ body {
   background-color: #fff;
 }
 
-.time, .save-profile-button, .input-wrap, .new-profile {
+.time, .profile-details, .save-profile-button, .input-wrap, .new-profile {
   font-family: Inter;
   font-weight: 400;
   font-size: 1rem;
@@ -123,17 +123,17 @@ body {
   width: 500px;
   max-width: 80%;
   background-color: white;
-  padding: 20px;
+  padding: 1.25rem;
   position: fixed;
-  bottom: 10%;
-  border-radius: 20px;
+  bottom: 7%;
+  border-radius: 1.25rem;
 }
 
 .input-wrap {
   height: 40px;
   width: 100%;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 ::-moz-placeholder {
@@ -151,22 +151,48 @@ body {
 .input-label-container {
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 0.0313rem solid rgba(0, 0, 0, 0.5);
   padding-bottom: 1rem;
 }
 
 .save-profile-button {
   color: #fff;
   background-color: rgba(15, 15, 15, 0.4);
-  padding-left: 95px;
-  padding-right: 95px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  border-radius: 37px;
+  padding-left: 5.9375rem;
+  padding-right: 5.9375rem;
+  padding-top: 0.8125rem;
+  padding-bottom: 0.8125rem;
+  border-radius: 2.3125rem;
 }
 
 .save-profile-wrap {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+}
+
+.profile-details {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-profile-more-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.user-profile-wrap {
+  margin-bottom: 1rem;
+}
+
+.user-profile {
+  padding: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.3019607843);
+  border-radius: 1rem;
+}
+
+#users {
+  margin-top: 3rem;
 }/*# sourceMappingURL=style.css.map */

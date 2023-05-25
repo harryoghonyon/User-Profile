@@ -129,11 +129,11 @@ body {
   width: 500px;
   max-width: 80%;
   background-color: white;
-  padding: 20px;
+  padding: 1.25rem;
   // margin-bottom: 100px;
   position: fixed;
-  bottom: 10%;
-  border-radius: 20px;
+  bottom: 7%;
+  border-radius: 1.25rem;
 }
 
 .input-wrap {
@@ -141,7 +141,7 @@ body {
   height: 40px;
   width: 100%;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 ::placeholder {
@@ -155,7 +155,7 @@ body {
 .input-label-container {
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 0.0313rem solid rgba(0, 0, 0, 0.5);
   padding-bottom: 1rem
 }
 
@@ -163,15 +163,43 @@ body {
   @extend .time;
   color: #fff;
   background-color: #0F0F0F66;
-  padding-left: 95px;
-  padding-right: 95px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  border-radius: 37px;
+  padding-left: 5.9375rem;
+  padding-right: 5.9375rem;
+  padding-top: 0.8125rem;
+  padding-bottom: 0.8125rem;
+  border-radius: 2.3125rem;
 }
 
 .save-profile-wrap {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+}
+
+.profile-details {
+  @extend .time;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-profile-more-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.user-profile-wrap {
+
+  margin-bottom: 1rem;
+}
+
+.user-profile {
+  padding: 16px;
+  border: 1px solid #0000004D;
+  border-radius: 1rem;
+}
+
+#users {
+  margin-top: 3rem;
 }
