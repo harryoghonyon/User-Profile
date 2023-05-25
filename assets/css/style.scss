@@ -92,11 +92,8 @@ body {
 	background-color: $dark-bg;
 	border-radius: 10rem;
 	color: $btn-font-color;
-	font-family: $time-font-family;
-    font-weight: $time-font-weight;
-    font-size: 15px;
-    line-height: $time-line-height;
-    letter-spacing: $time-letter-spacing;
+  @extend .time;
+  font-size: 15px;
 }
 
 .new-profile-wrap {
@@ -115,13 +112,66 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); 
   z-index: 9999; 
   display: none;
+  justify-content: center;
+  align-items: end;
 }
 
 .day-icon, 
 .night-icon{
   display: none;
+}
+
+.profile-form {
+  width: 500px;
+  max-width: 80%;
+  background-color: white;
+  padding: 20px;
+  // margin-bottom: 100px;
+  position: fixed;
+  bottom: 10%;
+  border-radius: 20px;
+}
+
+.input-wrap {
+  @extend .time;
+  height: 40px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+::placeholder {
+  color: $font-color;
+}
+
+.input-control:focus {
+  outline: none;
+}
+
+.input-label-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.5);
+  padding-bottom: 1rem
+}
+
+.save-profile-button{
+  @extend .time;
+  color: #fff;
+  background-color: #0F0F0F66;
+  padding-left: 95px;
+  padding-right: 95px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  border-radius: 37px;
+}
+
+.save-profile-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
