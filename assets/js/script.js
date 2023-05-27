@@ -84,6 +84,13 @@ const addUser = () => {
   const ageInput = document.querySelector("#age");
   const occupationInput = document.querySelector("#occupation");
 
+  ageInput.addEventListener("input", (e) => {
+    const input = e.target.value;
+    const onlyNumbers = input.replace(/\D/g, ""); // Remove non-numeric characters
+
+    e.target.value = onlyNumbers; // Update the input value with only numbers
+  });
+
   const user = {
     id: selectedUserId || users.length + 1, // Use the selectedUserId if it exists, otherwise assign a new ID
     name: nameInput.value,
