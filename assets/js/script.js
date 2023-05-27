@@ -88,7 +88,9 @@ const addUser = () => {
     const input = e.target.value;
     const onlyNumbers = input.replace(/\D/g, ""); // Remove non-numeric characters
 
-    e.target.value = onlyNumbers; // Update the input value with only numbers
+    if (onlyNumbers) {
+      e.target.value = onlyNumbers + " years"; // Append "years" text if input is not empty
+    }
   });
 
   const user = {
