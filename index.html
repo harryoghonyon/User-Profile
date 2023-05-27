@@ -48,6 +48,29 @@
         </div>
       </form>
     </div>
+    <div class="more-overlay">
+      <div class="editor">
+        <div class="edit-wrap">
+          <div class="edit-arrow-wrap">
+            <div class="edit-pen-wrap">
+              <img src="./assets/img/pen.svg" alt="" />
+              <p class="time">Edit</p>
+            </div>
+            <img
+              class="chev-right-icon"
+              src="./assets/img/chevron-right.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="delete-wrap" onclick="deleteUser()">
+          <div class="delete-trash-icon-wrap">
+            <img class="delete-icon" src="./assets/img/trash.svg" alt="" />
+            <p class="time">Delete</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <header>
       <div class="date-mode-wrap">
         <div class="date-time">
@@ -76,18 +99,6 @@
       </div>
 
       <div id="users"></div>
-      <!-- <div class="user-profile-wrap">
-        <div class="user-profile">
-          <div class="user-profile-more-wrap">
-            <div class="profile-details">
-              <p class="profile-details">Harry Tones</p>
-              <p class="profile-details">16 Years</p>
-              <p class="profile-details">Design Engineer</p>
-            </div>
-            <img class="more-icon" src="./assets/img/more.svg" alt="" />
-          </div>
-        </div>
-      </div> -->
     </div>
   </body>
   <script src="./assets/js/script.js"></script>

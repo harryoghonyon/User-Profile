@@ -203,3 +203,34 @@ body {
 #users {
   margin-top: 3rem;
 }
+
+.more-overlay {
+  @extend .overlay
+}
+
+.edit-pen-wrap{
+  display: flex;
+  flex-direction: row;
+  gap: 0.375rem;
+  align-items: center;
+}
+
+.edit-arrow-wrap {
+  @extend .edit-pen-wrap;
+  justify-content: space-between;
+}
+
+.edit-wrap {
+  border-bottom: 0.0313rem solid #00000080;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.delete-trash-icon-wrap {
+  @extend .edit-pen-wrap;
+}
+
+.editor {
+  @extend .profile-form;
+  bottom: 5%;
+}

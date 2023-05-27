@@ -37,6 +37,8 @@ setInterval(updateSecs, 1000);
 let newProfileBtn = document.querySelector(".new-profile");
 let overlay = document.querySelector(".overlay");
 let body = document.querySelector("body");
+let moreIcon = document.querySelector(".more-icon");
+let moreOverlay = document.querySelector(".more-overlay");
 
 newProfileBtn.addEventListener("click", () => {
   overlay.style.display = "flex";
@@ -60,20 +62,57 @@ if (currentHour >= 5 && currentHour <= 20) {
 }
 
 let users = [];
+let selectedUserId = null;
+
+// const addUser = () => {
+//   const user = {
+//     id: users.length + 1,
+//     name: document.querySelector("#name").value,
+//     age: document.querySelector("#age").value,
+//     occupation: document.querySelector("#occupation").value,
+//   };
+
+//   users.push(user);
+
+//   renderUsers();
+
+//   overlay.style.display = "none";
+// };
 
 const addUser = () => {
+  const nameInput = document.querySelector("#name");
+  const ageInput = document.querySelector("#age");
+  const occupationInput = document.querySelector("#occupation");
+
   const user = {
-    id: users.length + 1,
-    name: document.querySelector("#name").value,
-    age: document.querySelector("#age").value,
-    occupation: document.querySelector("#occupation").value,
+    id: selectedUserId || users.length + 1, // Use the selectedUserId if it exists, otherwise assign a new ID
+    name: nameInput.value,
+    age: ageInput.value,
+    occupation: occupationInput.value,
   };
 
-  users.push(user);
+  if (selectedUserId) {
+    // Update existing user
+    const existingUserIndex = users.findIndex(
+      (user) => user.id === selectedUserId
+    );
+    users[existingUserIndex] = user;
+  } else {
+    // Add new user
+    users.push(user);
+  }
 
   renderUsers();
 
   overlay.style.display = "none";
+};
+
+const deleteUser = () => {
+  users = users.filter((user) => user.id !== selectedUserId);
+
+  renderUsers();
+
+  moreOverlay.style.display = "none";
 };
 
 const renderUsers = () => {
@@ -90,7 +129,7 @@ const renderUsers = () => {
             <p class="profile-details">${user.age} Years</p>
             <p class="profile-details">${user.occupation}</p>
           </div>
-          <img class="more-icon" src="./assets/img/more.svg" alt="" />
+          <img class="more-icon" src="./assets/img/more.svg" alt="" data-id=${user.id} />
         </div>
       </div>
     </div>
@@ -125,3 +164,35 @@ form.addEventListener("submit", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", loadData);
+
+document.addEventListener("click", (e) => {
+  if (e.target.className === "more-icon") {
+    moreOverlay.style.display = "flex";
+    let userId = Number(e.target.getAttribute("data-id"));
+    selectedUserId = userId;
+  }
+  if (e.target.className === "more-overlay") {
+    moreOverlay.style.display = "none";
+  }
+});
+
+const editButton = document.querySelector(".edit-wrap");
+
+editButton.addEventListener("click", () => {
+  moreOverlay.style.display = "none"; // Hide the existing "more-overlay"
+
+  overlay.style.display = "flex"; // Show the "overlay" for editing
+
+  // Retrieve and display the existing user details in the input fields
+  const nameInput = document.querySelector("#name");
+  const ageInput = document.querySelector("#age");
+  const occupationInput = document.querySelector("#occupation");
+
+  // Retrieve the current user details from the users array
+  const currentUser = users.find((user) => user.id === selectedUserId);
+
+  // Set the input field values to the current user details
+  nameInput.value = currentUser.name;
+  ageInput.value = currentUser.age;
+  occupationInput.value = currentUser.occupation;
+});
